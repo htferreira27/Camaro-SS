@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rifa do Camaro SS - Participe e ganhe um Camaro!">
+    <title>Rifa do Camaro SS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>Rifa do Camaro SS</h1>
+            <nav>
+                <a href="#home">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#comprar">Comprar Rifa</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Participe da nossa rifa e ganhe um Camaro SS!</h2>
+                <p>Com apenas R$ 0,10, você pode ajudar a apoiar o esporte em nossa comunidade e ainda ter a chance de ganhar esse carro incrível!</p>
+                <button id="buyTicketBtn" onclick="window.location.href='#comprar'">Compre sua Rifa Agora</button>
+            </div>
+            <div class="car-image">
+                <!-- Substitua a imagem abaixo pelo caminho correto -->
+                <img src="CAMARO RIFA SS.jpg">
+                <img src="car.jpg.jpg">
+                <img src="camaros rifa ss.jpg"
+            </div>
+        </div>
+    </section>
+
+    <section class="info" id="sobre">
+        <div class="container">
+            <h2>Sobre a Rifa</h2>
+            <p>O valor da rifa é simbólico e visa arrecadar fundos para o incentivo ao esporte em nossa cidade. Toda a arrecadação será destinada a apoiar projetos esportivos locais e ajudar atletas em desenvolvimento.</p>
+            <div class="ticket-info">
+                <p><strong>Preço da Rifa:</strong> R$ 0,10</p>
+                <p><strong>Objetivo:</strong> Apoiar o esporte em nossa cidade!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário de Compra -->
+    <section class="payment" id="comprar">
+        <div class="container">
+            <h2>Escolha a Forma de Pagamento</h2>
+            <p>Selecione a forma de pagamento abaixo e preencha suas informações para garantir sua participação na rifa!</p>
+            
+            <form action="" method="POST">
+                <div class="payment-option">
+                    <label for="pix">Pagamento via Pix:</label>
+                    <input type="radio" id="pix" name="payment" value="pix" checked>
+                </div>
+
+                <div class="payment-option">
+                    <label for="cartao">Pagamento via Cartão de Crédito:</label>
+                    <input type="radio" id="cartao" name="payment" value="cartao">
+                </div>
+
+                <div class="payment-details" id="pixDetails">
+                    <h3>Detalhes do Pagamento via Pix</h3>
+                    <p>Por favor, faça o pagamento através do QR Code ou chave Pix abaixo.</p>
+                    <input type="text" placeholder="Chave Pix: exemplo@exemplo.com" required>
+                </div>
+
+                <div class="payment-details" id="cartaoDetails" style="display: none;">
+                    <h3>Detalhes do Cartão de Crédito</h3>
+                    <label for="nome">Nome no Cartão</label>
+                    <input type="text" id="nome" name="nome" placeholder="Nome completo" required>
+
+                    <label for="cartaoNum">Número do Cartão</label>
+                    <input type="text" id="cartaoNum" name="cartaoNum" placeholder="Número do cartão" required>
+
+                    <label for="validade">Validade</label>
+                    <input type="text" id="validade" name="validade" placeholder="MM/AA" required>
+
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+                </div>
+
+                <button type="submit">Finalizar Compra</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Rifa do Camaro SS | Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('buyTicketBtn').addEventListener('click', function() {
+            alert('Obrigado por comprar sua rifa! O pagamento será processado em breve.');
+        });
+
+        // Mostra os detalhes do Pix ou Cartão baseado na seleção
+        document.querySelectorAll('input[name="payment"]').forEach((el) => {
+            el.addEventListener('change', function() {
+                if (document.getElementById('pix').checked) {
+                    document.getElementById('pixDetails').style.display = 'block';
+                    document.getElementById('cartaoDetails').style.display = 'none';
+                } else {
+                    document.getElementById('pixDetails').style.display = 'none';
+                    document.getElementById('cartaoDetails').style.display = 'block';
+                }
+            });
+        });
+    </script>
+
+
+</body>
+</html>
+
